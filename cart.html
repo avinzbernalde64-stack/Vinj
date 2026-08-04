@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VINJ | Shopping Cart</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shop.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+.cart-page{
+
+padding:120px 8% 80px;
+
+background:#f8f8f8;
+
+min-height:100vh;
+
+}
+
+.cart-page h1{
+
+margin-bottom:40px;
+
+font-size:40px;
+
+}
+
+.cart-container{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:40px;
+
+}
+
+.cart-items{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.cart-item{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:20px 0;
+
+border-bottom:1px solid #ddd;
+
+}
+
+.cart-item img{
+
+width:110px;
+
+height:110px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+}
+
+.item-info{
+
+flex:1;
+
+padding:0 20px;
+
+}
+
+.item-info h3{
+
+margin-bottom:10px;
+
+}
+
+.item-price{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+.qty{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.qty button{
+
+width:35px;
+
+height:35px;
+
+border:none;
+
+background:#000;
+
+color:#fff;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
+
+.remove{
+
+background:red;
+
+color:#fff;
+
+border:none;
+
+padding:10px 15px;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
+
+.summary{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+height:fit-content;
+
+}
+
+.summary h2{
+
+margin-bottom:20px;
+
+}
+
+.summary p{
+
+display:flex;
+
+justify-content:space-between;
+
+margin:15px 0;
+
+font-size:18px;
+
+}
+
+.checkout{
+
+width:100%;
+
+padding:15px;
+
+background:#000;
+
+color:#fff;
+
+border:none;
+
+cursor:pointer;
+
+margin-top:20px;
+
+font-size:16px;
+
+border-radius:40px;
+
+}
+
+.checkout:hover{
+
+background:#444;
+
+}
+
+@media(max-width:900px){
+
+.cart-container{
+
+grid-template-columns:1fr;
+
+}
+
+.cart-item{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.item-info{
+
+padding:20px 0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<a href="index.html">VINJ</a>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="shop.html">Shop</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<div class="icons">
+
+<a href="cart.html">
+
+<i class="fas fa-shopping-cart"></i>
+
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="cart-page">
+
+<h1>Your Shopping Cart</h1>
+
+<div class="cart-container">
+
+<div class="cart-items" id="cartItems">
+
+<!-- Products will appear here -->
+
+</div>
+
+<div class="summary">
+
+<h2>Order Summary</h2>
+
+<p>
+
+<span>Subtotal</span>
+
+<span id="subtotal">$0.00</span>
+
+</p>
+
+<p>
+
+<span>Shipping</span>
+
+<span>$10.00</span>
+
+</p>
+
+<hr>
+
+<p>
+
+<strong>Total</strong>
+
+<strong id="total">$10.00</strong>
+
+</p>
+
+<button class="checkout">
+
+Proceed to Checkout
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <h3>VINJ</h3>
+
+            <p>Wear Your Identity.</p>
+
+        </div>
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+
+        </div>
+
+        <div>
+
+            <h4>Customer Service</h4>
+
+            <a href="#">FAQs</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Track Order</a>
+
+        </div>
+
+        <div>
+
+            <h4>Follow Us</h4>
+
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 VINJ Clothing. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<!-- CART JAVASCRIPT -->
+
+<script src="js/cart.js"></script>
+
+</body>
+</html>
